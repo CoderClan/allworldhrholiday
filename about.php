@@ -12,7 +12,7 @@
                     <h5 class="section-about-title pe-3">About Us</h5>
                     <h1 class="mb-4">Welcome to <span class="text-primary">Travela</span></h1>
                     <p class="mb-4">
-                    At <strong>RRS DreamGlobal Travels</strong>, we believe travel is not just about reaching a destination—it’s about creating memories that last a lifetime. 
+                    At <strong>ALL World HR Holidays</strong>, we believe travel is not just about reaching a destination—it’s about creating memories that last a lifetime. 
                     With our expertise and passion, we design journeys that blend comfort, adventure, and cultural discovery.
                     </p>
                     <p class="mb-4">
