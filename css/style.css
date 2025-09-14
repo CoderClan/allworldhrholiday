@@ -1245,3 +1245,7 @@
     background: var(--bs-dark) !important;
 }
 /*** copyright end ***/
+
+.fa-star{
+    color: gold !important;
+}

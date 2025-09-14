@@ -27,6 +27,79 @@
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
+
+        <style>
+        /* Popup Modal Styles */
+        .popup-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .popup-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: none;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 700px;
+            position: relative;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .popup-close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            cursor: pointer;
+        }
+
+        .popup-close:hover,
+        .popup-close:focus {
+            color: black;
+            text-decoration: none;
+        }
+
+        .popup-header {
+            border-bottom: 2px solid #f8f9fa;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .popup-body img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .popup-meta {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .popup-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        </style>
     </head>
 
     <body>
@@ -118,7 +191,16 @@
                                 <p class="mb-3">Posted By: Royal Hamblin </p>
                                 <a href="#" class="h4">Adventures Trip</a>
                                 <p class="my-3">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
-                                <a href="#" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
+                                <button class="btn btn-primary rounded-pill py-2 px-4 read-more-btn" 
+                                        data-title="Adventures Trip"
+                                        data-author="Royal Hamblin"
+                                        data-date="28 Jan 2050"
+                                        data-likes="1.7K"
+                                        data-comments="1K"
+                                        data-image="img/blog-1.jpg"
+                                        data-content="Embark on the ultimate adventures trip that will take you through breathtaking landscapes and thrilling experiences. From mountain climbing to river rafting, this journey is designed for adrenaline seekers who want to push their limits. Our experienced guides ensure your safety while maximizing the excitement of each activity. Discover hidden gems in remote locations, experience local cultures, and create memories that will last a lifetime. The adventure includes camping under starlit skies, hiking through pristine wilderness, and encountering wildlife in their natural habitat. Every moment is carefully planned to provide both challenge and reward, making this the perfect escape from ordinary life.">
+                                    Read More
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -139,9 +221,18 @@
                             </div>
                             <div class="blog-content border border-top-0 rounded-bottom p-4">
                                 <p class="mb-3">Posted By: Royal Hamblin </p>
-                                <a href="#" class="h4">Adventures Trip</a>
+                                <a href="#" class="h4">Cultural Exploration</a>
                                 <p class="my-3">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
-                                <a href="#" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
+                                <button class="btn btn-primary rounded-pill py-2 px-4 read-more-btn"
+                                        data-title="Cultural Exploration"
+                                        data-author="Royal Hamblin"
+                                        data-date="28 Jan 2050"
+                                        data-likes="1.7K"
+                                        data-comments="1K"
+                                        data-image="img/blog-2.jpg"
+                                        data-content="Immerse yourself in rich cultural traditions and discover the authentic spirit of local communities. This cultural exploration takes you beyond tourist attractions to experience genuine interactions with locals, traditional ceremonies, and age-old customs. Visit ancient temples, participate in cooking classes with local families, and learn traditional crafts from master artisans. Each destination offers unique insights into different ways of life, beliefs, and practices that have been preserved for generations. From vibrant festivals to quiet village life, this journey provides a deep appreciation for cultural diversity and human connection across different societies.">
+                                    Read More
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -162,9 +253,18 @@
                             </div>
                             <div class="blog-content border border-top-0 rounded-bottom p-4">
                                 <p class="mb-3">Posted By: Royal Hamblin </p>
-                                <a href="#" class="h4">Adventures Trip</a>
+                                <a href="#" class="h4">Luxury Getaway</a>
                                 <p class="my-3">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
-                                <a href="#" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
+                                <button class="btn btn-primary rounded-pill py-2 px-4 read-more-btn"
+                                        data-title="Luxury Getaway"
+                                        data-author="Royal Hamblin"
+                                        data-date="28 Jan 2050"
+                                        data-likes="1.7K"
+                                        data-comments="1K"
+                                        data-image="img/blog-3.jpg"
+                                        data-content="Indulge in the ultimate luxury getaway experience with world-class accommodations, premium services, and exclusive amenities. This carefully curated journey focuses on relaxation, comfort, and sophisticated pleasures. Stay in award-winning resorts with stunning ocean views, enjoy private butler service, and dine at Michelin-starred restaurants. Experience spa treatments using the finest natural ingredients, private yacht excursions, and exclusive access to members-only facilities. Every detail is designed to provide an unparalleled level of comfort and luxury, making this the perfect escape for those who appreciate the finer things in life.">
+                                    Read More
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -172,6 +272,26 @@
             </div>
         </div>
         <!-- Blog End -->
+
+        <!-- Popup Modal -->
+        <div id="blogPopup" class="popup-modal">
+            <div class="popup-content">
+                <span class="popup-close">&times;</span>
+                <div class="popup-header">
+                    <h2 id="popupTitle"></h2>
+                </div>
+                <div class="popup-body">
+                    <img id="popupImage" src="" alt="">
+                    <div class="popup-meta">
+                        <span><i class="fa fa-user text-primary"></i> <span id="popupAuthor"></span></span>
+                        <span><i class="fa fa-calendar-alt text-primary"></i> <span id="popupDate"></span></span>
+                        <span><i class="fa fa-thumbs-up text-primary"></i> <span id="popupLikes"></span></span>
+                        <span><i class="fa fa-comments text-primary"></i> <span id="popupComments"></span></span>
+                    </div>
+                    <p id="popupContent"></p>
+                </div>
+            </div>
+        </div>
 
         <!-- Subscribe Start -->
         <div class="container-fluid subscribe py-5">
@@ -279,8 +399,8 @@
                         <i class="fas fa-copyright me-2"></i><a class="text-white" href="#">ALL World HR Holidays</a>, All right reserved.
                     </div>
                     <div class="col-md-6 text-center text-md-start">
-                        <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
-                        <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+                        <!--/*** This template is free as long as you keep the below author's credit link/attribution link/backlink. ***/-->
+                        <!--/*** If you'd like to use the template without the below author's credit link/attribution link/backlink, ***/-->
                         <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
                         Designed By <a class="text-white" href="https://htmlcodex.com">CodeClan</a>
                     </div>
@@ -323,6 +443,59 @@ document.addEventListener("DOMContentLoaded", function () {
       // restore original active if exists
       if (currentActive) currentActive.classList.add("active");
     });
+  });
+
+  // Blog Popup Functionality
+  const modal = document.getElementById('blogPopup');
+  const readMoreBtns = document.querySelectorAll('.read-more-btn');
+  const closeBtn = document.querySelector('.popup-close');
+
+  // Open popup when Read More is clicked
+  readMoreBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      const title = this.getAttribute('data-title');
+      const author = this.getAttribute('data-author');
+      const date = this.getAttribute('data-date');
+      const likes = this.getAttribute('data-likes');
+      const comments = this.getAttribute('data-comments');
+      const image = this.getAttribute('data-image');
+      const content = this.getAttribute('data-content');
+
+      // Populate popup with data
+      document.getElementById('popupTitle').textContent = title;
+      document.getElementById('popupAuthor').textContent = author;
+      document.getElementById('popupDate').textContent = date;
+      document.getElementById('popupLikes').textContent = likes;
+      document.getElementById('popupComments').textContent = comments;
+      document.getElementById('popupImage').src = image;
+      document.getElementById('popupContent').textContent = content;
+
+      // Show popup
+      modal.style.display = 'block';
+      document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    });
+  });
+
+  // Close popup when X is clicked
+  closeBtn.addEventListener('click', function() {
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Restore scrolling
+  });
+
+  // Close popup when clicking outside of it
+  window.addEventListener('click', function(event) {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+  });
+
+  // Close popup with Escape key
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' && modal.style.display === 'block') {
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto'; // Restore scrolling
+    }
   });
 });
 </script>
