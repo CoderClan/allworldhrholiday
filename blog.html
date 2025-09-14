@@ -54,15 +54,19 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
-                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <a href="index.html" class="nav-item nav-link ">Home</a>
                         <a href="services.html" class="nav-item nav-link">Services</a>
                        
                         <a href="packages.html" class="nav-item nav-link">Packages</a>
-                        <a href="blog.html" class="nav-item nav-link">Blog</a>
+                        <a href="blog.html" class="nav-item nav-link active">Blog</a>
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
                     </div>
-                    <a href="contact.html" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book Now</a>
-                </div>
+                 <a href="https://wa.me/91XXXXXXXXXX" 
+   target="_blank" 
+   class="btn btn-success rounded-pill py-2 px-4 ms-lg-4">
+   <i class="fab fa-whatsapp me-2"></i> Chat on WhatsApp
+</a>
+  </div>
             </nav>
         </div>
         <!-- Navbar & Hero End -->
@@ -302,6 +306,29 @@
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+        <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+  let currentActive = document.querySelector(".navbar-nav .nav-link.active");
+
+  navLinks.forEach(link => {
+    link.addEventListener("mouseenter", function () {
+      // remove active from current
+      if (currentActive) currentActive.classList.remove("active");
+      // set new active
+      this.classList.add("active");
+    });
+
+    link.addEventListener("mouseleave", function () {
+      // remove hover active
+      this.classList.remove("active");
+      // restore original active if exists
+      if (currentActive) currentActive.classList.add("active");
+    });
+  });
+});
+</script>
+
     </body>
 
 </html>
