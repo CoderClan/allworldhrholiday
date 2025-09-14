@@ -21,12 +21,104 @@
         <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
         <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
-
         <!-- Customized Bootstrap Stylesheet -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
+        
+        <style>
+            /* WhatsApp Floating Button Styles */
+            .whatsapp-float {
+                position: fixed;
+                width: 60px;
+                height: 60px;
+                bottom: 30px;
+                right: 30px;
+                background-color: #007bff;
+                color: #FFF;
+                border-radius: 50px;
+                text-align: center;
+                font-size: 30px;
+                box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+                z-index: 100;
+                transition: all 0.3s ease;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+            }
+
+            .whatsapp-float:hover {
+                background-color: #0056b3;
+                transform: scale(1.1);
+                color: #FFF;
+                text-decoration: none;
+            }
+
+            .whatsapp-float:focus {
+                color: #FFF;
+                text-decoration: none;
+            }
+
+            /* WhatsApp contact section styles */
+            .whatsapp-contact {
+                background: linear-gradient(135deg, #007bff, #0056b3);
+                border-radius: 10px;
+                padding: 20px;
+                margin-top: 20px;
+                text-align: center;
+                transition: transform 0.3s ease;
+            }
+
+            .whatsapp-contact:hover {
+                transform: translateY(-5px);
+            }
+
+            .whatsapp-contact i {
+                color: white !important;
+            }
+
+            .whatsapp-contact h4 {
+                color: white !important;
+            }
+
+            .whatsapp-contact p {
+                color: white !important;
+            }
+
+            .whatsapp-contact a {
+                color: white !important;
+                text-decoration: none;
+                font-weight: 500;
+            }
+
+            .whatsapp-contact a:hover {
+                text-decoration: underline;
+            }
+
+            /* Animation for floating button */
+            @keyframes pulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.05); }
+                100% { transform: scale(1); }
+            }
+
+            .whatsapp-float.pulse {
+                animation: pulse 2s infinite;
+            }
+
+            /* Mobile responsiveness */
+            @media (max-width: 768px) {
+                .whatsapp-float {
+                    width: 50px;
+                    height: 50px;
+                    font-size: 25px;
+                    bottom: 20px;
+                    right: 20px;
+                }
+            }
+        </style>
     </head>
 
     <body>
@@ -39,36 +131,15 @@
         </div>
         <!-- Spinner End -->
 
-        <!-- Topbar Start -->
-        <div class="container-fluid bg-primary px-5 d-none d-lg-block">
-            <div class="row gx-0">
-                <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
-                    <div class="d-inline-flex align-items-center" style="height: 45px;">
-                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-twitter fw-normal"></i></a>
-                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-facebook-f fw-normal"></i></a>
-                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-linkedin-in fw-normal"></i></a>
-                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-instagram fw-normal"></i></a>
-                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle" href=""><i class="fab fa-youtube fw-normal"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 text-center text-lg-end">
-                    <div class="d-inline-flex align-items-center" style="height: 45px;">
-                        <a href="#"><small class="me-3 text-light"><i class="fa fa-user me-2"></i>Register</small></a>
-                        <a href="#"><small class="me-3 text-light"><i class="fa fa-sign-in-alt me-2"></i>Login</small></a>
-                        <div class="dropdown">
-                            <a href="#" class="dropdown-toggle text-light" data-bs-toggle="dropdown"><small><i class="fa fa-home me-2"></i> My Dashboard</small></a>
-                            <div class="dropdown-menu rounded">
-                                <a href="#" class="dropdown-item"><i class="fas fa-user-alt me-2"></i> My Profile</a>
-                                <a href="#" class="dropdown-item"><i class="fas fa-comment-alt me-2"></i> Inbox</a>
-                                <a href="#" class="dropdown-item"><i class="fas fa-bell me-2"></i> Notifications</a>
-                                <a href="#" class="dropdown-item"><i class="fas fa-cog me-2"></i> Account Settings</a>
-                                <a href="#" class="dropdown-item"><i class="fas fa-power-off me-2"></i> Log Out</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- WhatsApp Floating Button -->
+        <a href="https://wa.me/+1234567890?text=Hi%20there!%20I%27m%20interested%20in%20your%20travel%20packages.%20Can%20you%20help%20me%20plan%20my%20next%20trip?" 
+           class="whatsapp-float pulse" 
+           target="_blank" 
+           title="Chat with us on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+
+      
         <!-- Topbar End -->
 
         <!-- Navbar & Hero Start -->
@@ -83,12 +154,10 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
-                        <a href="index.html" class="nav-item nav-link">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
+                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <!-- <a href="about.html" class="nav-item nav-link">About</a> -->
                         <a href="services.html" class="nav-item nav-link">Services</a>
-                        <a href="packages.html" class="nav-item nav-link">Packages</a>
-                        <a href="blog.html" class="nav-item nav-link">Blog</a>
-                        <div class="nav-item dropdown">
+                        <!-- <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu m-0">
                                 <a href="destination.html" class="dropdown-item">Destination</a>
@@ -99,8 +168,10 @@
                                 <a href="testimonial.html" class="dropdown-item">Testimonial</a>
                                 <a href="404.html" class="dropdown-item">404 Page</a>
                             </div>
-                        </div>
-                        <a href="contact.html" class="nav-item nav-link active">Contact</a>
+                        </div> -->
+                        <a href="packages.html" class="nav-item nav-link">Packages</a>
+                        <a href="blog.html" class="nav-item nav-link">Blog</a>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
                     </div>
                     <a href="" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book Now</a>
                 </div>
@@ -111,7 +182,7 @@
         <!-- Header Start -->
         <div class="container-fluid bg-breadcrumb">
             <div class="container text-center py-5" style="max-width: 900px;">
-                <h3 class="text-white display-3 mb-4">Contact Us</h1>
+                <h3 class="text-white display-3 mb-4">Contact Us</h3>
                 <ol class="breadcrumb justify-content-center mb-0">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                     <li class="breadcrumb-item"><a href="#">Pages</a></li>
@@ -126,34 +197,48 @@
             <div class="container py-5">
                 <div class="mx-auto text-center mb-5" style="max-width: 900px;">
                     <h5 class="section-title px-3">Contact Us</h5>
-                    <h1 class="mb-0">Contact For Any Query</h1>
+                    <h1 class="mb-3">Connect Instantly via WhatsApp</h1>
+                    <p class="lead">Experience instant travel support through WhatsApp. Our expert team is ready to help you plan your perfect journey with personalized assistance and real-time responses.</p>
                 </div>
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-4">
                         <div class="bg-white rounded p-4">
                             <div class="text-center mb-4">
                                 <i class="fa fa-map-marker-alt fa-3x text-primary"></i>
-                                <h4 class="text-primary"><Address></Address></h4>
+                                <h4 class="text-primary">Address</h4>
                                 <p class="mb-0">123 ranking Street, <br> New York, USA</p>
                             </div>
                             <div class="text-center mb-4">
                                 <i class="fa fa-phone-alt fa-3x text-primary mb-3"></i>
                                 <h4 class="text-primary">Mobile</h4>
-                                <p class="mb-0">+012 345 67890</p>
-                                <p class="mb-0">+012 345 67890</p>
+                                <p class="mb-0"><a href="tel:+012345678900">+012 345 67890</a></p>
+                                <p class="mb-0"><a href="tel:+012345678901">+012 345 67891</a></p>
                             </div>
                            
-                            <div class="text-center">
+                            <div class="text-center mb-4">
                                 <i class="fa fa-envelope-open fa-3x text-primary mb-3"></i>
                                 <h4 class="text-primary">Email</h4>
-                                <p class="mb-0">info@example.com</p>
-                                <p class="mb-0">info@example.com</p>
+                                <p class="mb-0"><a href="mailto:info@example.com">info@example.com</a></p>
+                                <p class="mb-0"><a href="mailto:support@example.com">support@example.com</a></p>
+                            </div>
+
+                            <!-- WhatsApp Contact Section -->
+                            <div class="whatsapp-contact">
+                                <i class="fab fa-whatsapp fa-3x mb-3"></i>
+                                <h4>WhatsApp Chat</h4>
+                                <p class="mb-2">Chat with us instantly!</p>
+                                <a href="https://wa.me/+1234567890?text=Hi!%20I%20need%20help%20with%20travel%20planning." 
+                                   target="_blank" 
+                                   class="btn btn-success btn-sm rounded-pill px-3 py-2">
+                                    <i class="fab fa-whatsapp me-2"></i>Start Chat
+                                </a>
+                                <p class="mt-2 mb-0 small">Available 24/7</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-8">
                         <h3 class="mb-2">Send us a message</h3>
-                        <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
+                        <p class="mb-4">Get in touch with us through the form below, or for instant support, click our WhatsApp button. We're here to help you plan your perfect trip!</p>
                         <form>
                             <div class="row g-3">
                                 <div class="col-md-6">
@@ -181,7 +266,15 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                                    <div class="row g-2">
+                                        <div class="col-md-12">
+                                            <a href="https://wa.me/+1234567890?text=Hi!%20I%20would%20like%20to%20discuss%20travel%20packages." 
+                                               target="_blank" 
+                                               class="btn btn-success w-100 py-3">
+                                                <i class="fab fa-whatsapp me-2"></i>Chat on WhatsApp
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </form>
@@ -204,7 +297,7 @@
                 <div class="mx-auto text-center" style="max-width: 900px;">
                     <h5 class="subscribe-title px-3">Subscribe</h5>
                     <h1 class="text-white mb-4">Our Newsletter</h1>
-                    <p class="text-white mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum tempore nam, architecto doloremque velit explicabo? Voluptate sunt eveniet fuga eligendi! Expedita laudantium fugiat corrupti eum cum repellat a laborum quasi.
+                    <p class="text-white mb-5">Stay updated with our latest travel deals and destinations. Subscribe to our newsletter and never miss out on amazing travel opportunities!
                     </p>
                     <div class="position-relative mx-auto">
                         <input class="form-control border-primary rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
@@ -223,15 +316,16 @@
                         <div class="footer-item d-flex flex-column">
                             <h4 class="mb-4 text-white">Get In Touch</h4>
                             <a href=""><i class="fas fa-home me-2"></i> 123 Street, New York, USA</a>
-                            <a href=""><i class="fas fa-envelope me-2"></i> info@example.com</a>
-                            <a href=""><i class="fas fa-phone me-2"></i> +012 345 67890</a>
-                            <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +012 345 67890</a>
+                            <a href="mailto:info@example.com"><i class="fas fa-envelope me-2"></i> info@example.com</a>
+                            <a href="tel:+012345678900"><i class="fas fa-phone me-2"></i> +012 345 67890</a>
+                            <a href="https://wa.me/+1234567890" class="mb-3" target="_blank"><i class="fab fa-whatsapp me-2"></i> WhatsApp Chat</a>
                             <div class="d-flex align-items-center">
                                 <i class="fas fa-share fa-2x text-white me-2"></i>
                                 <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
                                 <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn-square btn" style="background-color: #25d366;" href="https://wa.me/+1234567890" target="_blank"><i class="fab fa-whatsapp"></i></a>
                             </div>
                         </div>
                     </div>
@@ -311,8 +405,8 @@
                         <i class="fas fa-copyright me-2"></i><a class="text-white" href="#">Your Site Name</a>, All right reserved.
                     </div>
                     <div class="col-md-6 text-center text-md-start">
-                        <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
-                        <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+                        <!--/*** This template is free as long as you keep the below author's credit link/attribution link/backlink. ***/-->
+                        <!--/*** If you'd like to use the template without the below author's credit link/attribution link/backlink, ***/-->
                         <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
                         Designed By <a class="text-white" href="https://htmlcodex.com">HTML Codex</a>
                     </div>
@@ -336,6 +430,105 @@
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+
+        <!-- WhatsApp Integration Script -->
+        <script>
+            // Function to detect device type
+            function isMobileDevice() {
+                return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 
+                       (window.innerWidth <= 768 && 'ontouchstart' in window);
+            }
+
+            // Function to create appropriate WhatsApp URL
+            function createWhatsAppURL(phoneNumber, message) {
+                const encodedMessage = encodeURIComponent(message);
+                
+                if (isMobileDevice()) {
+                    // Mobile: Use wa.me for app
+                    return `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+                } else {
+                    // Desktop/Laptop: Use web.whatsapp.com
+                    return `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
+                }
+            }
+
+            // Update all WhatsApp links when page loads
+            document.addEventListener('DOMContentLoaded', function() {
+                const phoneNumber = '+1234567890'; // Replace with your actual number
+                
+                // Update all WhatsApp links with appropriate URLs
+                document.querySelectorAll('a[href*="wa.me"]').forEach(function(link) {
+                    const originalHref = link.href;
+                    const urlParams = new URLSearchParams(originalHref.split('?')[1]);
+                    const message = urlParams.get('text') || 'Hi! I need help with travel planning.';
+                    
+                    // Set the appropriate URL based on device
+                    link.href = createWhatsAppURL(phoneNumber, message);
+                    
+                    // Add click event for analytics and user feedback
+                    link.addEventListener('click', function(e) {
+                        console.log('WhatsApp chat initiated on:', isMobileDevice() ? 'Mobile' : 'Desktop');
+                        
+                        // Optional: Show a brief loading message for desktop users
+                        if (!isMobileDevice()) {
+                            // You can add a small notification here
+                            console.log('Opening WhatsApp Web...');
+                        }
+                    });
+                });
+
+                // Handle floating WhatsApp button animations
+                const whatsappButton = document.querySelector('.whatsapp-float');
+                if (whatsappButton) {
+                    // Update floating button URL
+                    const defaultMessage = "Hi there! I'm interested in your travel packages. Can you help me plan my next trip?";
+                    whatsappButton.href = createWhatsAppURL(phoneNumber, defaultMessage);
+                    
+                    // Remove pulse animation on hover
+                    whatsappButton.addEventListener('mouseenter', function() {
+                        this.classList.remove('pulse');
+                    });
+                    
+                    // Add pulse animation back when mouse leaves
+                    whatsappButton.addEventListener('mouseleave', function() {
+                        this.classList.add('pulse');
+                    });
+                }
+
+                // Add device-specific styling hints
+                if (!isMobileDevice()) {
+                    // Add a subtle indicator for desktop users
+                    const style = document.createElement('style');
+                    style.textContent = `
+                        .whatsapp-float::after {
+                            content: '';
+                            position: absolute;
+                            top: -5px;
+                            right: -5px;
+                            width: 20px;
+                            height: 20px;
+                            background: #fff;
+                            border-radius: 50%;
+                            opacity: 0.8;
+                            animation: ping 2s infinite;
+                        }
+                        
+                        @keyframes ping {
+                            0% { transform: scale(1); opacity: 0.8; }
+                            50% { transform: scale(1.2); opacity: 0.4; }
+                            100% { transform: scale(1); opacity: 0.8; }
+                        }
+                    `;
+                    document.head.appendChild(style);
+                }
+            });
+
+            // Optional: Add a function to manually refresh WhatsApp URLs if needed
+            window.refreshWhatsAppLinks = function() {
+                const event = new Event('DOMContentLoaded');
+                document.dispatchEvent(event);
+            };
+        </script>
     </body>
 
 </html>
