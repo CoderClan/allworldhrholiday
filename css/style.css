@@ -1249,3 +1249,11 @@
 .fa-star{
     color: gold !important;
 }
+
+.packages-img img {
+    height: 250px;          /* set fixed height */
+    width: 100%;            /* make it full width */
+    object-fit: cover;      /* crop proportionally */
+    border-top-left-radius: 0.5rem; /* keep rounded corners */
+    border-top-right-radius: 0.5rem;
+  }
