@@ -116,6 +116,47 @@
         display: inline-block;
       }
 
+      /* Category Header Styles */
+      .category-header {
+        text-align: center;
+        margin: 60px 0 40px;
+        position: relative;
+      }
+
+      .category-title {
+        background: linear-gradient(135deg, var(--primary), #1e4a8c);
+        color: white;
+        padding: 15px 40px;
+        border-radius: 50px;
+        font-size: 1.8rem;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 15px;
+        box-shadow: 0 8px 30px rgba(19, 53, 123, 0.3);
+        position: relative;
+        z-index: 2;
+      }
+
+      .category-title i {
+        font-size: 1.5rem;
+      }
+
+      .category-line {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(19, 53, 123, 0.3),
+          transparent
+        );
+        z-index: 1;
+      }
+
       .packages-item {
         border-radius: 10px;
         overflow: hidden;
@@ -123,6 +164,10 @@
         transition: all 0.3s;
         cursor: pointer;
         margin: 15px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
       }
 
       .packages-item:hover {
@@ -133,6 +178,43 @@
       .packages-img img {
         height: 250px;
         object-fit: cover;
+      }
+
+      .packages-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .packages-content .p-4 {
+        flex: 1;
+      }
+
+      .whatsapp-button {
+        margin-top: auto;
+      }
+
+      /* Category Badge */
+      .category-badge {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        z-index: 3;
+      }
+
+      .badge-international {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+      }
+
+      .badge-national {
+        background: linear-gradient(135deg, #f093fb, #f5576c);
+        color: white;
       }
 
       .btn-hover:hover {
@@ -204,7 +286,7 @@
       }
 
       .modal-content {
-        background-color: #fff;
+        background-color: #fff !important;
         margin: 2% auto;
         padding: 0;
         border-radius: 15px;
@@ -431,19 +513,16 @@
         .package-highlights {
           grid-template-columns: 1fr;
         }
+
+        .category-title {
+          font-size: 1.4rem;
+          padding: 12px 30px;
+        }
       }
     </style>
   </head>
 
   <body>
-    <!-- Spinner Start -->
-    <!-- <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
-        </div> -->
-    <!-- Spinner End -->
-
     <!-- Navbar & Hero Start -->
     <div class="container-fluid position-relative p-0">
       <nav
@@ -470,20 +549,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <div class="navbar-nav ms-auto py-0">
             <a href="/travel-ui" class="nav-item nav-link">Home</a>
-            <!-- <a href="about" class="nav-item nav-link">About</a> -->
             <a href="services" class="nav-item nav-link">Services</a>
-            <!-- <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu m-0">
-                                <a href="destination" class="dropdown-item">Destination</a>
-                                <a href="tour" class="dropdown-item">Explore Tour</a>
-                                <a href="booking" class="dropdown-item">Travel Booking</a>
-                                <a href="gallery" class="dropdown-item">Our Gallery</a>
-                                <a href="guides" class="dropdown-item">Travel Guides</a>
-                                <a href="testimonial" class="dropdown-item">Testimonial</a>
-                                <a href="404" class="dropdown-item">404 Page</a>
-                            </div>
-                        </div> -->
             <a href="packages" class="nav-item nav-link active">Packages</a>
             <a href="blog" class="nav-item nav-link">Blog</a>
             <a href="contact" class="nav-item nav-link">Contact</a>
@@ -504,11 +570,6 @@
     <div class="container-fluid bg-breadcrumb">
       <div class="container text-center py-5" style="max-width: 900px">
         <h3 class="text-white display-3 mb-4">Travel Packages</h3>
-        <!-- <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a href="/travel-ui">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                    <li class="breadcrumb-item active text-white">Packages</li>
-                </ol>     -->
       </div>
     </div>
     <!-- Header End -->
@@ -521,14 +582,246 @@
           <h1 class="mb-0">Awesome Packages</h1>
         </div>
 
-        <!-- First Row (4 items) -->
+        <!-- International Packages Section -->
+        <div class="category-header">
+          <div class="category-line"></div>
+          <div class="category-title">
+            <i class="fas fa-globe-americas"></i>
+            International Destinations
+          </div>
+        </div>
+
         <div class="row g-4 justify-content-center">
-          <!-- Corporate Package -->
-          <div class="col-lg-6 col-xl-3">
-            <div class="packages-item" onclick="openPackageModal('corporate')">
+          <!-- Vietnam Package -->
+          <div class="col-lg-6 col-xl-4">
+            <div class="packages-item" onclick="openPackageModal('vietnam')">
+              <div class="category-badge badge-international">
+                International
+              </div>
               <div class="packages-img">
                 <img
-                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=250&fit=crop"
+                  src="https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=400&h=250&fit=crop"
+                  class="img-fluid w-100 rounded-top"
+                  alt="Vietnam Package"
+                  style="height: 250px; object-fit: cover"
+                />
+              </div>
+              <div class="packages-content bg-light">
+                <div class="p-4 pb-0">
+                  <h5 class="mb-0">Vietnam Package - Ho Chi Minh & Hanoi</h5>
+                  <div class="mb-3">
+                    <small class="fa fa-star text-warning"></small>
+                    <small class="fa fa-star text-warning"></small>
+                    <small class="fa fa-star text-warning"></small>
+                    <small class="fa fa-star text-warning"></small>
+                    <small class="fa fa-star text-warning"></small>
+                  </div>
+                  <p class="mb-4">
+                    Discover Vietnam's rich history and culture — from bustling
+                    Ho Chi Minh City to historic Hanoi. Experience street food,
+                    ancient temples, and Ha Long Bay's stunning landscapes.
+                  </p>
+                </div>
+                <a
+                  href="https://wa.me/+917054393143"
+                  target="_blank"
+                  class="text-decoration-none"
+                >
+                  <div
+                    class="whatsapp-button row mx-0 rounded-lg shadow-sm"
+                    style="
+                      background: linear-gradient(135deg, #198754, #198754);
+                      color: #fff !important;
+                      cursor: pointer;
+                    "
+                  >
+                    <div class="col-12 d-flex align-items-center px-3 py-3">
+                      <i class="fab fa-whatsapp fa-2x me-3"></i>
+                      <h5 class="mb-0 text-white">WhatsApp Chat</h5>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bali Package -->
+          <div class="col-lg-6 col-xl-4">
+            <div class="packages-item" onclick="openPackageModal('bali')">
+              <div class="category-badge badge-international">
+                International
+              </div>
+              <div class="packages-img">
+                <img
+                  src="https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?w=400&h=250&fit=crop"
+                  class="img-fluid w-100 rounded-top"
+                  alt="Bali Package"
+                  style="height: 250px; object-fit: cover"
+                />
+              </div>
+              <div class="packages-content bg-light">
+                <div class="p-4 pb-0">
+                  <h5 class="mb-0">Bali Package - Island Paradise</h5>
+                  <div class="mb-3">
+                    <small class="fa fa-star text-warning"></small>
+                    <small class="fa fa-star text-warning"></small>
+                    <small class="fa fa-star text-warning"></small>
+                    <small class="fa fa-star text-warning"></small>
+                    <small class="fa fa-star text-warning"></small>
+                  </div>
+                  <p class="mb-4">
+                    Experience Bali's tropical paradise — pristine beaches,
+                    ancient temples, and vibrant culture. Perfect for
+                    relaxation, adventure, and unforgettable sunset views.
+                  </p>
+                </div>
+                <a
+                  href="https://wa.me/+917054393143"
+                  target="_blank"
+                  class="text-decoration-none"
+                >
+                  <div
+                    class="whatsapp-button row mx-0 rounded-lg shadow-sm"
+                    style="
+                      background: linear-gradient(135deg, #198754, #198754);
+                      color: #fff !important;
+                      cursor: pointer;
+                    "
+                  >
+                    <div class="col-12 d-flex align-items-center px-3 py-3">
+                      <i class="fab fa-whatsapp fa-2x me-3"></i>
+                      <h5 class="mb-0 text-white">WhatsApp Chat</h5>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hajj Package -->
+          <div class="col-lg-6 col-xl-4">
+            <div class="packages-item" onclick="openPackageModal('hajj')">
+              <div class="category-badge badge-international">
+                International
+              </div>
+              <div class="packages-img">
+                <img
+                  src="img/hajj.jpg"
+                  class="img-fluid w-100 rounded-top"
+                  alt="Hajj Package - Saudi"
+                  style="height: 250px; object-fit: cover"
+                />
+              </div>
+              <div class="packages-content bg-light">
+                <div class="p-4 pb-0">
+                  <h5 class="mb-0">Hajj Package - Saudi Arabia</h5>
+                  <div class="mb-3">
+                    <small class="fa fa-star text-warning"></small>
+                    <small class="fa fa-star text-warning"></small>
+                    <small class="fa fa-star text-warning"></small>
+                    <small class="fa fa-star text-warning"></small>
+                    <small class="fa fa-star text-warning"></small>
+                  </div>
+                  <p class="mb-4">
+                    A spiritually fulfilling journey to the holy cities of
+                    Makkah and Madinah. Our all-inclusive Hajj package covers
+                    accommodation, guided services, and transportation.
+                  </p>
+                </div>
+                <a
+                  href="https://wa.me/+917054393143"
+                  target="_blank"
+                  class="text-decoration-none"
+                >
+                  <div
+                    class="row mx-0 rounded-lg shadow-sm"
+                    style="
+                      background: linear-gradient(135deg, #198754, #198754);
+                      color: #fff !important;
+                      cursor: pointer;
+                    "
+                  >
+                    <div class="col-12 d-flex align-items-center px-3 py-3">
+                      <i class="fab fa-whatsapp fa-2x me-3"></i>
+                      <h5 class="mb-0 text-white">WhatsApp Chat</h5>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Umrah Package -->
+          <div class="col-lg-6 col-xl-4">
+            <div class="packages-item" onclick="openPackageModal('umrah')">
+              <div class="category-badge badge-international">
+                International
+              </div>
+              <div class="packages-img">
+                <img
+                  src="https://images.unsplash.com/photo-1580418827493-f2b22c0a76cb?w=400&h=250&fit=crop"
+                  class="img-fluid w-100 rounded-top"
+                  alt="Umrah Package - Saudi"
+                  style="height: 250px; object-fit: cover"
+                />
+              </div>
+              <div class="packages-content bg-light">
+                <div class="p-4 pb-0">
+                  <h5 class="mb-0">Umrah Package - Saudi Arabia</h5>
+                  <div class="mb-3">
+                    <small class="fa fa-star text-warning"></small>
+                    <small class="fa fa-star text-warning"></small>
+                    <small class="fa fa-star text-warning"></small>
+                    <small class="fa fa-star text-warning"></small>
+                    <small class="fa fa-star text-warning"></small>
+                  </div>
+                  <p class="mb-4">
+                    Perform Umrah with ease and comfort. Our package includes
+                    visa assistance, hotel stays near Haram, and convenient
+                    local transport for a peaceful pilgrimage.
+                  </p>
+                </div>
+                <a
+                  href="https://wa.me/+917054393143"
+                  target="_blank"
+                  class="text-decoration-none"
+                >
+                  <div
+                    class="row mx-0 rounded-lg shadow-sm"
+                    style="
+                      background: linear-gradient(135deg, #198754, #198754);
+                      color: #fff !important;
+                      cursor: pointer;
+                    "
+                  >
+                    <div class="col-12 d-flex align-items-center px-3 py-3">
+                      <i class="fab fa-whatsapp fa-2x me-3"></i>
+                      <h5 class="mb-0 text-white">WhatsApp Chat</h5>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- National Packages Section -->
+        <div class="category-header">
+          <div class="category-line"></div>
+          <div class="category-title">
+            <i class="fas fa-map-marker-alt"></i>
+            National Destinations
+          </div>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+          <!-- Corporate Package -->
+          <div class="col-lg-6 col-xl-4">
+            <div class="packages-item" onclick="openPackageModal('corporate')">
+              <div class="category-badge badge-national">National</div>
+              <div class="packages-img">
+                <img
+                  src="img//club.jpg"
                   class="img-fluid w-100 rounded-top"
                   alt="Corporate Package"
                 />
@@ -537,11 +830,11 @@
                 <div class="p-4 pb-0">
                   <h5 class="mb-0">Corporate Package - Bengaluru</h5>
                   <div class="mb-3">
-                    <small class="fa fa-star"></small
-                    ><small class="fa fa-star"></small
-                    ><small class="fa fa-star"></small
-                    ><small class="fa fa-star"></small
-                    ><small class="fa fa-star"></small>
+                    <small class="fa fa-star text-warning"></small>
+                    <small class="fa fa-star text-warning"></small>
+                    <small class="fa fa-star text-warning"></small>
+                    <small class="fa fa-star text-warning"></small>
+                    <small class="fa fa-star text-warning"></small>
                   </div>
                   <p class="mb-4">
                     Perfect for business travelers — Bengaluru blends modern
@@ -557,14 +850,14 @@
                   <div
                     class="row mx-0 rounded-lg shadow-sm"
                     style="
-                      background: linear-gradient(135deg, #25d366, #128c7e);
-                      color: #fff;
+                      background: linear-gradient(135deg, #198754, #198754);
+                      color: #fff !important;
                       cursor: pointer;
                     "
                   >
                     <div class="col-12 d-flex align-items-center px-3 py-3">
                       <i class="fab fa-whatsapp fa-2x me-3"></i>
-                      <h5 class="mb-0">WhatsApp Chat</h5>
+                      <h5 class="mb-0 text-white">WhatsApp Chat</h5>
                     </div>
                   </div>
                 </a>
@@ -573,11 +866,12 @@
           </div>
 
           <!-- Family Package -->
-          <div class="col-lg-6 col-xl-3">
+          <div class="col-lg-6 col-xl-4">
             <div class="packages-item" onclick="openPackageModal('family')">
+              <div class="category-badge badge-national">National</div>
               <div class="packages-img">
                 <img
-                  src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=400&h=250&fit=crop"
+                  src="img/jaipur.jpg"
                   class="img-fluid w-100 rounded-top"
                   alt="Family Package"
                 />
@@ -586,11 +880,11 @@
                 <div class="p-4 pb-0">
                   <h5 class="mb-0">Family Package - Jaipur Rajasthan</h5>
                   <div class="mb-3">
-                    <small class="fa fa-star"></small
-                    ><small class="fa fa-star"></small
-                    ><small class="fa fa-star"></small
-                    ><small class="fa fa-star"></small
-                    ><small class="fa fa-star"></small>
+                    <small class="fa fa-star text-warning"></small>
+                    <small class="fa fa-star text-warning"></small>
+                    <small class="fa fa-star text-warning"></small>
+                    <small class="fa fa-star text-warning"></small>
+                    <small class="fa fa-star text-warning"></small>
                   </div>
                   <p class="mb-4">
                     Ideal for families — Jaipur offers heritage, culture, and
@@ -606,14 +900,14 @@
                   <div
                     class="row mx-0 rounded-lg shadow-sm"
                     style="
-                      background: linear-gradient(135deg, #25d366, #128c7e);
-                      color: #fff;
+                      background: linear-gradient(135deg, #198754, #198754);
+                      color: #fff !important ;
                       cursor: pointer;
                     "
                   >
                     <div class="col-12 d-flex align-items-center px-3 py-3">
                       <i class="fab fa-whatsapp fa-2x me-3"></i>
-                      <h5 class="mb-0">WhatsApp Chat</h5>
+                      <h5 class="mb-0 text-white">WhatsApp Chat</h5>
                     </div>
                   </div>
                 </a>
@@ -622,8 +916,9 @@
           </div>
 
           <!-- Honeymoon Package -->
-          <div class="col-lg-6 col-xl-3">
+          <div class="col-lg-6 col-xl-4">
             <div class="packages-item" onclick="openPackageModal('honeymoon')">
+              <div class="category-badge badge-national">National</div>
               <div class="packages-img">
                 <img
                   src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=250&fit=crop"
@@ -636,11 +931,11 @@
                 <div class="p-4 pb-0">
                   <h5 class="mb-0">Honeymoon Package - Manali</h5>
                   <div class="mb-3">
-                    <small class="fa fa-star"></small
-                    ><small class="fa fa-star"></small
-                    ><small class="fa fa-star"></small
-                    ><small class="fa fa-star"></small
-                    ><small class="fa fa-star"></small>
+                    <small class="fa fa-star text-warning"></small>
+                    <small class="fa fa-star text-warning"></small>
+                    <small class="fa fa-star text-warning"></small>
+                    <small class="fa fa-star text-warning"></small>
+                    <small class="fa fa-star text-warning"></small>
                   </div>
                   <p class="mb-4">
                     Designed for couples — Manali is the ultimate romantic
@@ -656,14 +951,14 @@
                   <div
                     class="row mx-0 rounded-lg shadow-sm"
                     style="
-                      background: linear-gradient(135deg, #25d366, #128c7e);
-                      color: #fff;
+                      background: linear-gradient(135deg, #198754, #198754);
+                      color: #fff !important;
                       cursor: pointer;
                     "
                   >
                     <div class="col-12 d-flex align-items-center px-3 py-3">
                       <i class="fab fa-whatsapp fa-2x me-3"></i>
-                      <h5 class="mb-0">WhatsApp Chat</h5>
+                      <h5 class="mb-0 text-white">WhatsApp Chat</h5>
                     </div>
                   </div>
                 </a>
@@ -671,133 +966,32 @@
             </div>
           </div>
 
-          <!-- Hajj Package -->
-          <div class="col-lg-6 col-xl-3">
-            <div class="packages-item" onclick="openPackageModal('hajj')">
+          <!-- Kedarnath Package -->
+          <div class="col-lg-6 col-xl-4">
+            <div class="packages-item" onclick="openPackageModal('kedarnath')">
+              <div class="category-badge badge-national">National</div>
               <div class="packages-img">
                 <img
-                  src="img/hajj.jpg"
+                  src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=400&h=250&fit=crop"
                   class="img-fluid w-100 rounded-top"
-                  alt="Hajj Package - Saudi"
+                  alt="Kedarnath Package"
                   style="height: 250px; object-fit: cover"
                 />
               </div>
               <div class="packages-content bg-light">
                 <div class="p-4 pb-0">
-                  <h5 class="mb-0">Hajj Package - Saudi Arabia</h5>
+                  <h5 class="mb-0">Kedarnath Package - Sacred Journey</h5>
                   <div class="mb-3">
-                    <small class="fa fa-star"></small
-                    ><small class="fa fa-star"></small
-                    ><small class="fa fa-star"></small
-                    ><small class="fa fa-star"></small
-                    ><small class="fa fa-star"></small>
+                    <small class="fa fa-star text-warning"></small>
+                    <small class="fa fa-star text-warning"></small>
+                    <small class="fa fa-star text-warning"></small>
+                    <small class="fa fa-star text-warning"></small>
+                    <small class="fa fa-star text-warning"></small>
                   </div>
                   <p class="mb-4">
-                    A spiritually fulfilling journey to the holy cities of
-                    Makkah and Madinah. Our all-inclusive Hajj package covers
-                    accommodation, guided services, and transportation.
-                  </p>
-                </div>
-                <a
-                  href="https://wa.me/966123456789"
-                  target="_blank"
-                  class="text-decoration-none"
-                >
-                  <div
-                    class="row mx-0 rounded-lg shadow-sm"
-                    style="
-                      background: linear-gradient(135deg, #25d366, #128c7e);
-                      color: #fff;
-                      cursor: pointer;
-                    "
-                  >
-                    <div class="col-12 d-flex align-items-center px-3 py-3">
-                      <i class="fab fa-whatsapp fa-2x me-3"></i>
-                      <h5 class="mb-0">WhatsApp Chat</h5>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Second Row (3 items) -->
-        <div class="row g-4 justify-content-center mt-4">
-          <!-- Umrah Package -->
-          <div class="col-lg-6 col-xl-3">
-            <div class="packages-item" onclick="openPackageModal('umrah')">
-              <div class="packages-img">
-                <img
-                  src="img/umrah.jpg"
-                  class="img-fluid w-100 rounded-top"
-                  alt="Umrah Package - Saudi"
-                  style="height: 250px; object-fit: cover"
-                />
-              </div>
-              <div class="packages-content bg-light">
-                <div class="p-4 pb-0">
-                  <h5 class="mb-0">Umrah Package - Saudi Arabia</h5>
-                  <div class="mb-3">
-                    <small class="fa fa-star"></small
-                    ><small class="fa fa-star"></small
-                    ><small class="fa fa-star"></small
-                    ><small class="fa fa-star"></small
-                    ><small class="fa fa-star"></small>
-                  </div>
-                  <p class="mb-4">
-                    Perform Umrah with ease and comfort. Our package includes
-                    visa assistance, hotel stays near Haram, and convenient
-                    local transport for a peaceful pilgrimage.
-                  </p>
-                </div>
-                <a
-                  href="https://wa.me/966987654321"
-                  target="_blank"
-                  class="text-decoration-none"
-                >
-                  <div
-                    class="row mx-0 rounded-lg shadow-sm"
-                    style="
-                      background: linear-gradient(135deg, #25d366, #128c7e);
-                      color: #fff;
-                      cursor: pointer;
-                    "
-                  >
-                    <div class="col-12 d-flex align-items-center px-3 py-3">
-                      <i class="fab fa-whatsapp fa-2x me-3"></i>
-                      <h5 class="mb-0">WhatsApp Chat</h5>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Honeymoon (second copy, optional different content) -->
-          <div class="col-lg-6 col-xl-3">
-            <div class="packages-item" onclick="openPackageModal('honeymoon')">
-              <div class="packages-img">
-                <img
-                  src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=250&fit=crop"
-                  class="img-fluid w-100 rounded-top"
-                  alt="Honeymoon Package"
-                />
-              </div>
-              <div class="packages-content bg-light">
-                <div class="p-4 pb-0">
-                  <h5 class="mb-0">Honeymoon Package - Manali</h5>
-                  <div class="mb-3">
-                    <small class="fa fa-star"></small
-                    ><small class="fa fa-star"></small
-                    ><small class="fa fa-star"></small
-                    ><small class="fa fa-star"></small
-                    ><small class="fa fa-star"></small>
-                  </div>
-                  <p class="mb-4">
-                    Designed for couples — Manali is the ultimate romantic
-                    escape. From snowy peaks to cozy resorts, enjoy peaceful
-                    moments and adventures in the Himalayas.
+                    Embark on a spiritual journey to Kedarnath — one of the
+                    holiest Hindu pilgrimage sites. Experience divine blessings
+                    amidst majestic Himalayan peaks and pristine nature.
                   </p>
                 </div>
                 <a
@@ -806,16 +1000,16 @@
                   class="text-decoration-none"
                 >
                   <div
-                    class="row mx-0 rounded-lg shadow-sm"
+                    class="whatsapp-button row mx-0 rounded-lg shadow-sm"
                     style="
-                      background: linear-gradient(135deg, #25d366, #128c7e);
-                      color: #fff;
+                      background: linear-gradient(135deg, #198754, #198754);
+                      color: #fff !important;
                       cursor: pointer;
                     "
                   >
                     <div class="col-12 d-flex align-items-center px-3 py-3">
                       <i class="fab fa-whatsapp fa-2x me-3"></i>
-                      <h5 class="mb-0">WhatsApp Chat</h5>
+                      <h5 class="mb-0 text-white">WhatsApp Chat</h5>
                     </div>
                   </div>
                 </a>
@@ -824,11 +1018,12 @@
           </div>
 
           <!-- Adventure Package -->
-          <div class="col-lg-6 col-xl-3">
+          <div class="col-lg-6 col-xl-4">
             <div class="packages-item" onclick="openPackageModal('adventure')">
+              <div class="category-badge badge-national">National</div>
               <div class="packages-img">
                 <img
-                  src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=250&fit=crop"
+                  src="img/rishikesh.jpg"
                   class="img-fluid w-100 rounded-top"
                   alt="Adventure Package"
                 />
@@ -837,11 +1032,11 @@
                 <div class="p-4 pb-0">
                   <h5 class="mb-0">Youth & Adventure Package - Rishikesh</h5>
                   <div class="mb-3">
-                    <small class="fa fa-star"></small
-                    ><small class="fa fa-star"></small
-                    ><small class="fa fa-star"></small
-                    ><small class="fa fa-star"></small
-                    ><small class="fa fa-star"></small>
+                    <small class="fa fa-star text-warning"></small>
+                    <small class="fa fa-star text-warning"></small>
+                    <small class="fa fa-star text-warning"></small>
+                    <small class="fa fa-star text-warning"></small>
+                    <small class="fa fa-star text-warning"></small>
                   </div>
                   <p class="mb-4">
                     Perfect for young explorers — Rishikesh offers rafting,
@@ -857,14 +1052,14 @@
                   <div
                     class="row mx-0 rounded-lg shadow-sm"
                     style="
-                      background: linear-gradient(135deg, #25d366, #128c7e);
-                      color: #fff;
+                      background: linear-gradient(135deg, #198754, #198754);
+                      color: #fff !important;
                       cursor: pointer;
                     "
                   >
                     <div class="col-12 d-flex align-items-center px-3 py-3">
                       <i class="fab fa-whatsapp fa-2x me-3"></i>
-                      <h5 class="mb-0">WhatsApp Chat</h5>
+                      <h5 class="mb-0 text-white">WhatsApp Chat</h5>
                     </div>
                   </div>
                 </a>
@@ -958,14 +1153,14 @@
                 <div
                   class="row mx-0 rounded-lg shadow-sm"
                   style="
-                    background: linear-gradient(135deg, #25d366, #128c7e);
-                    color: #fff;
+                    background: linear-gradient(135deg, #198754, #198754);
+                    color: #fff !important;
                     cursor: pointer;
                   "
                 >
                   <div class="col-12 d-flex align-items-center px-3 py-3">
                     <i class="fab fa-whatsapp fa-2x me-3"></i>
-                    <h5 class="mb-0">WhatsApp Chat</h5>
+                    <h5 class="mb-0 text-white">WhatsApp Chat</h5>
                   </div>
                 </div>
               </a>
@@ -1145,9 +1340,6 @@
             reserved.
           </div>
           <div class="col-md-6 text-center text-md-start">
-            <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
-            <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
-            <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
             Designed By
             <a class="text-white" href="#">CodeClan</a>
           </div>
@@ -1176,7 +1368,84 @@
 
       // Package data
       const packageData = {
-        // ---------------- Hajj Package ----------------
+        // International Packages
+        vietnam: {
+          title: "Vietnam Package - Ho Chi Minh & Hanoi",
+          location: "Ho Chi Minh City & Hanoi, Vietnam",
+          price: "₹45,999 per person",
+          image:
+            "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=800&h=400&fit=crop",
+          duration: "7 Days 6 Nights",
+          groupSize: "2-15 people",
+          accommodation: "4-star Hotels",
+          meals: "Breakfast & Select Dinners",
+          description:
+            "Discover Vietnam's rich history and culture from bustling Ho Chi Minh City to historic Hanoi. Experience authentic street food, ancient temples, stunning Ha Long Bay, and the warmth of Vietnamese hospitality in this comprehensive journey through Vietnam's highlights.",
+          itinerary: [
+            {
+              day: 1,
+              title: "Arrival in Ho Chi Minh City",
+              description:
+                "Airport pickup, hotel check-in, evening street food tour and city orientation walk.",
+            },
+            {
+              day: 2,
+              title: "Ho Chi Minh City Exploration",
+              description:
+                "Visit War Remnants Museum, Reunification Palace, Notre Dame Cathedral, Central Post Office, and Ben Thanh Market.",
+            },
+            {
+              day: 3,
+              title: "Cu Chi Tunnels & Mekong Delta",
+              description:
+                "Full day trip to historic Cu Chi Tunnels and scenic Mekong Delta with boat rides and local lunch.",
+            },
+            {
+              day: 4,
+              title: "Flight to Hanoi",
+              description:
+                "Morning flight to Hanoi, Old Quarter walking tour, evening water puppet show.",
+            },
+            {
+              day: 5,
+              title: "Hanoi City Tour",
+              description:
+                "Visit Ho Chi Minh Mausoleum, Temple of Literature, Hoan Kiem Lake, and traditional Vietnamese cooking class.",
+            },
+            {
+              day: 6,
+              title: "Ha Long Bay Day Trip",
+              description:
+                "Full day cruise in UNESCO World Heritage Ha Long Bay with limestone karsts, caves, and seafood lunch.",
+            },
+            {
+              day: 7,
+              title: "Departure",
+              description:
+                "Morning leisure time, last-minute shopping, airport transfer for departure.",
+            },
+          ],
+          inclusions: [
+            "6 nights accommodation in 4-star hotels",
+            "Daily breakfast and select dinners",
+            "Domestic flight Ho Chi Minh to Hanoi",
+            "All transfers and sightseeing",
+            "Professional English-speaking guide",
+            "Ha Long Bay cruise with lunch",
+            "Water puppet show tickets",
+            "Cooking class experience",
+          ],
+          exclusions: [
+            "International flights",
+            "Vietnam visa fees",
+            "Lunch meals (except Ha Long Bay)",
+            "Personal expenses and shopping",
+            "Travel insurance",
+            "Tips and gratuities",
+            "Travel insurance",
+          ],
+        },
+
         hajj: {
           title: "Hajj Package - Saudi Arabia",
           location: "Makkah & Madinah",
@@ -1252,92 +1521,181 @@
           ],
         },
 
-        // ---------------- Umrah Package ----------------
+        bali: {
+          title: "Bali Package - Island Paradise",
+          location: "Bali, Indonesia",
+          price: "₹45,999 per person",
+          image:
+            "https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?w=400&h=250&fit=crop",
+          duration: "7 Days 6 Nights",
+          groupSize: "2-15 people",
+          accommodation: "4-star Hotels",
+          meals: "Breakfast & Select Dinners",
+          description:
+            "Experience Bali's tropical paradise — pristine beaches, ancient temples, lush rice terraces, and vibrant culture. Perfect for relaxation, adventure, and unforgettable sunset views.",
+          itinerary: [
+            {
+              day: 1,
+              title: "Arrival in Bali",
+              description:
+                "Arrival at Ngurah Rai International Airport, transfer to hotel, evening leisure at Kuta Beach.",
+            },
+            {
+              day: 2,
+              title: "Ubud & Rice Terraces",
+              description:
+                "Full-day trip to Ubud – visit Sacred Monkey Forest, Tegalalang Rice Terraces, and Ubud Art Market.",
+            },
+            {
+              day: 3,
+              title: "Mount Batur Sunrise & Hot Springs",
+              description:
+                "Early morning trek to Mount Batur for sunrise, followed by relaxation at natural hot springs.",
+            },
+            {
+              day: 4,
+              title: "Waterfalls & Temples",
+              description:
+                "Visit Tegenungan Waterfall, Tirta Empul Temple, and the beautiful Ulun Danu Beratan Temple.",
+            },
+            {
+              day: 5,
+              title: "Nusa Penida Island Tour",
+              description:
+                "Full-day speedboat trip to Nusa Penida – explore Kelingking Beach, Broken Beach, and Angel’s Billabong.",
+            },
+            {
+              day: 6,
+              title: "Beaches & Tanah Lot Sunset",
+              description:
+                "Relax at Padang Padang Beach and Dreamland Beach, then witness the magical sunset at Tanah Lot Temple.",
+            },
+            {
+              day: 7,
+              title: "Departure",
+              description:
+                "Morning leisure time, shopping at local markets, and airport transfer for departure.",
+            },
+          ],
+          inclusions: [
+            "6 nights accommodation in 4-star hotels",
+            "Daily breakfast and select dinners",
+            "Airport transfers",
+            "All sightseeing as per itinerary",
+            "Professional English-speaking guide",
+            "Nusa Penida island tour with boat transfers",
+            "Mount Batur trek with guide",
+            "Tanah Lot sunset experience",
+          ],
+          exclusions: [
+            "International flights",
+            "Bali visa fees (if applicable)",
+            "Lunch meals (unless specified)",
+            "Personal expenses and shopping",
+            "Travel insurance",
+            "Tips and gratuities",
+          ],
+        },
+
         umrah: {
           title: "Umrah Package - Saudi Arabia",
-          location: "Makkah & Madinah",
+          location: "Makkah & Madinah, Saudi Arabia",
           price: "₹1,25,000 per person",
-          image: "img/umrah.jpg",
+          image:
+            "https://images.unsplash.com/photo-1580418827493-f2b22c0a76cb?w=800&h=400&fit=crop",
           duration: "10 Days 9 Nights",
           groupSize: "10-50 people",
           accommodation: "4-star & 5-star Hotels",
           meals: "Breakfast & Dinner",
           description:
-            "Our Umrah Package is designed for pilgrims seeking a peaceful spiritual journey. Stay close to the Haram, enjoy guided Umrah rituals, and travel with ease between Makkah and Madinah.",
+            "Our Umrah Package is designed for pilgrims seeking a peaceful spiritual journey. Stay close to the Haram, enjoy guided Umrah rituals with experienced scholars, and travel with ease between the holy cities of Makkah and Madinah.",
           itinerary: [
             {
               day: 1,
               title: "Arrival in Jeddah",
               description:
-                "Airport pickup and transfer to Makkah hotel near Haram.",
+                "Airport pickup and comfortable transfer to Makkah hotel near Haram Sharif.",
             },
             {
               day: 2,
               title: "Umrah Performance",
-              description: "Perform Umrah rituals with guidance.",
+              description:
+                "Guided Umrah rituals with scholars, complete Tawaf and Sa'ee with spiritual guidance.",
             },
             {
               day: 3,
               title: "Makkah Ziyarat",
-              description: "Visit Jabal Noor, Cave Hira, Jannat al-Mu'alla.",
+              description:
+                "Visit Jabal Noor, Cave Hira, Jannat al-Mu'alla cemetery, and historical Islamic sites.",
+            },
+            {
+              day: 4,
+              title: "Spiritual Reflection",
+              description:
+                "Free time for personal prayers, additional Tawaf, Islamic lectures and discussions.",
             },
             {
               day: 5,
               title: "Journey to Madinah",
-              description: "Travel to Madinah, check-in near Masjid al-Nabawi.",
+              description:
+                "Travel to Madinah, hotel check-in near Masjid al-Nabawi, evening prayers.",
             },
             {
               day: 6,
               title: "Madinah Ziyarat",
               description:
-                "Visit Quba Mosque, Masjid Qiblatain, Uhud Mountain.",
+                "Visit Quba Mosque, Masjid Qiblatain, Uhud Mountain, and other significant sites.",
             },
             {
-              day: 9,
-              title: "Leisure & Worship",
-              description: "Time for prayers, shopping, and rest.",
+              day: 8,
+              title: "Final Ziyarat",
+              description:
+                "Complete remaining ziyarat sites, shopping for dates and Islamic items.",
             },
             {
               day: 10,
               title: "Departure",
               description:
-                "Final ziyarat at Masjid al-Nabawi and airport transfer.",
+                "Final prayers at Masjid al-Nabawi, airport transfer for departure.",
             },
           ],
           inclusions: [
-            "4-star & 5-star hotel accommodation",
-            "Daily breakfast & dinner",
-            "Guided Umrah rituals",
-            "Air-conditioned transport",
+            "9 nights accommodation in 4-5 star hotels",
+            "Daily breakfast and dinner",
+            "Saudi Arabia Umrah visa assistance",
+            "Guided Umrah rituals with scholars",
+            "Air-conditioned transportation",
             "Ziyarat tours in Makkah & Madinah",
-            "Visa support",
+            "Group coordinator support",
           ],
           exclusions: [
-            "Airfare (optional add-on)",
+            "International airfare (available as add-on)",
             "Lunch meals",
-            "Personal expenses",
+            "Personal expenses and shopping",
             "Travel insurance",
             "Tips and gratuities",
+            "Medical expenses",
           ],
         },
+
+        // National Packages
         corporate: {
           title: "Corporate Package - Bengaluru",
           location: "Bengaluru, Karnataka",
           price: "₹15,999 per person",
-          image:
-            "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=400&fit=crop",
+          image: "img//club.jpg",
           duration: "4 Days 3 Nights",
           groupSize: "10-50 people",
           accommodation: "5-star Business Hotel",
           meals: "All meals included",
           description:
-            "Our Corporate Package in Bengaluru is designed for business professionals seeking a perfect blend of work and leisure. Experience India's Silicon Valley with premium accommodations, state-of-the-art conference facilities, and curated city tours that showcase the best of modern India's tech capital.",
+            "Our Corporate Package in Bengaluru is designed for business professionals seeking a perfect blend of work and leisure. Experience India's Silicon Valley with premium accommodations, state-of-the-art conference facilities, and curated city tours.",
           itinerary: [
             {
               day: 1,
               title: "Arrival & Business Setup",
               description:
-                "Airport pickup, hotel check-in, welcome dinner, and evening networking session at UB City Mall.",
+                "Airport pickup, hotel check-in, welcome dinner, evening networking session at UB City Mall.",
             },
             {
               day: 2,
@@ -1349,7 +1707,7 @@
               day: 3,
               title: "Tech Hub Experience",
               description:
-                "Visit to Electronic City, tech company tours, traditional lunch, evening at Commercial Street for shopping.",
+                "Visit to Electronic City, tech company tours, traditional lunch, evening at Commercial Street.",
             },
             {
               day: 4,
@@ -1365,58 +1723,56 @@
             "Conference room facilities",
             "Professional guide",
             "All entrance fees",
-            "Wi-Fi and business center access",
           ],
           exclusions: [
             "Personal expenses",
             "Alcoholic beverages",
             "Travel insurance",
-            "Tips and gratuities",
             "Shopping expenses",
           ],
         },
+
         family: {
           title: "Family Package - Jaipur",
           location: "Jaipur, Rajasthan",
           price: "₹12,999 per person",
-          image:
-            "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&h=400&fit=crop",
+          image: "img/jaipur.jpg",
           duration: "5 Days 4 Nights",
           groupSize: "2-8 people",
           accommodation: "Heritage Hotel",
           meals: "Breakfast & Dinner",
           description:
-            "Discover the Pink City with your loved ones in our specially crafted Family Package. Experience royal heritage, vibrant culture, and create unforgettable memories as you explore magnificent palaces, colorful bazaars, and traditional Rajasthani hospitality that will enchant visitors of all ages.",
+            "Discover the Pink City with your loved ones in our specially crafted Family Package. Experience royal heritage, vibrant culture, and create unforgettable memories exploring magnificent palaces and colorful bazaars.",
           itinerary: [
             {
               day: 1,
               title: "Royal Welcome",
               description:
-                "Arrival, heritage hotel check-in, welcome drink, evening visit to Nahargarh Fort for sunset views.",
+                "Arrival, heritage hotel check-in, welcome drink, evening visit to Nahargarh Fort for sunset.",
             },
             {
               day: 2,
               title: "Palace & Fort Exploration",
               description:
-                "Morning visit to Amber Fort with elephant ride, afternoon at City Palace and Jantar Mantar, evening shopping at Johari Bazaar.",
+                "Morning visit to Amber Fort with elephant ride, afternoon at City Palace and Jantar Mantar.",
             },
             {
               day: 3,
               title: "Cultural Immersion",
               description:
-                "Hawa Mahal photo session, Albert Hall Museum, traditional Rajasthani lunch, evening cultural show with dinner.",
+                "Hawa Mahal photo session, Albert Hall Museum, evening cultural show with dinner.",
             },
             {
               day: 4,
               title: "Adventure & Relaxation",
               description:
-                "Day trip to Pushkar, camel safari, visit to Brahma Temple, evening return to Jaipur.",
+                "Day trip to Pushkar, camel safari, visit to Brahma Temple, evening return.",
             },
             {
               day: 5,
               title: "Departure",
               description:
-                "Morning leisure time, hotel checkout, last-minute shopping, airport transfer.",
+                "Morning leisure time, hotel checkout, shopping, airport transfer.",
             },
           ],
           inclusions: [
@@ -1426,16 +1782,15 @@
             "Professional guide",
             "Elephant ride at Amber Fort",
             "Cultural show tickets",
-            "All entrance fees",
           ],
           exclusions: [
             "Lunch meals",
             "Personal expenses",
             "Travel insurance",
             "Camera fees at monuments",
-            "Additional activities",
           ],
         },
+
         honeymoon: {
           title: "Honeymoon Package - Manali",
           location: "Manali, Himachal Pradesh",
@@ -1447,37 +1802,37 @@
           accommodation: "Romantic Hill Resort",
           meals: "All meals included",
           description:
-            "Escape to the serene beauty of the Himalayas with our romantic Honeymoon Package. Nestled in the snow-capped mountains of Manali, enjoy intimate moments, breathtaking views, candlelight dinners, and adventurous activities designed to create the perfect start to your married life together.",
+            "Escape to the serene beauty of the Himalayas with our romantic Honeymoon Package. Nestled in snow-capped mountains, enjoy intimate moments, breathtaking views, and adventures designed for couples.",
           itinerary: [
             {
               day: 1,
               title: "Romantic Arrival",
               description:
-                "Airport pickup, romantic resort check-in with flower decoration, welcome drinks, candlelight dinner.",
+                "Airport pickup, romantic resort check-in with flower decoration, candlelight dinner.",
             },
             {
               day: 2,
               title: "Solang Valley Adventure",
               description:
-                "Morning visit to Solang Valley, paragliding and zorbing activities, romantic lunch, evening at leisure.",
+                "Morning visit to Solang Valley, paragliding and zorbing activities, romantic lunch.",
             },
             {
               day: 3,
               title: "Rohtang Pass Excursion",
               description:
-                "Full day trip to Rohtang Pass, snow activities, mountain photography, evening bonfire with dinner.",
+                "Full day trip to Rohtang Pass, snow activities, evening bonfire with dinner.",
             },
             {
               day: 4,
               title: "Local Sightseeing",
               description:
-                "Hadimba Temple, Manu Temple, Mall Road shopping, couple's spa session, romantic dinner.",
+                "Hadimba Temple, Manu Temple, Mall Road shopping, couple's spa session.",
             },
             {
               day: 5,
               title: "Kasol Day Trip",
               description:
-                "Day trip to Kasol and Tosh village, nature walks, riverside lunch, evening return to Manali.",
+                "Day trip to Kasol and Tosh village, nature walks, riverside lunch.",
             },
             {
               day: 6,
@@ -1490,7 +1845,6 @@
             "Romantic hill resort stay",
             "All meals with special dinners",
             "Airport and local transfers",
-            "Sightseeing as per itinerary",
             "Adventure activities",
             "Couple's spa session",
             "Flower decorations and cake",
@@ -1500,21 +1854,89 @@
             "Personal expenses",
             "Additional adventure activities",
             "Travel insurance",
-            "Tips and gratuities",
           ],
         },
+
+        kedarnath: {
+          title: "Kedarnath Package - Sacred Journey",
+          location: "Kedarnath, Uttarakhand",
+          price: "₹22,999 per person",
+          image:
+            "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800&h=400&fit=crop",
+          duration: "6 Days 5 Nights",
+          groupSize: "4-20 people",
+          accommodation: "Hotels & Dharamshala",
+          meals: "Simple Vegetarian Meals",
+          description:
+            "Embark on a spiritual journey to Kedarnath, one of the holiest Hindu pilgrimage sites. Experience divine blessings amidst majestic Himalayan peaks and pristine nature in this sacred Char Dham destination.",
+          itinerary: [
+            {
+              day: 1,
+              title: "Arrival in Haridwar",
+              description:
+                "Pickup from Haridwar, drive to Guptkashi via Rishikesh and Devprayag, overnight stay.",
+            },
+            {
+              day: 2,
+              title: "Guptkashi to Kedarnath",
+              description:
+                "Early morning drive to Gaurikund, trek or helicopter ride to Kedarnath, temple darshan.",
+            },
+            {
+              day: 3,
+              title: "Kedarnath Temple",
+              description:
+                "Early morning aarti, temple prayers, explore surroundings, spiritual meditation.",
+            },
+            {
+              day: 4,
+              title: "Return to Guptkashi",
+              description:
+                "Final darshan at Kedarnath Temple, return journey to Guptkashi via Gaurikund.",
+            },
+            {
+              day: 5,
+              title: "Guptkashi to Rishikesh",
+              description:
+                "Visit Triyuginarayan Temple, drive to Rishikesh, evening Ganga Aarti.",
+            },
+            {
+              day: 6,
+              title: "Departure",
+              description:
+                "Morning visit to Har Ki Pauri Haridwar, departure to home destination.",
+            },
+          ],
+          inclusions: [
+            "Accommodation in hotels and dharamshala",
+            "All meals (simple vegetarian)",
+            "Transportation by tempo traveler",
+            "Professional guide and porter",
+            "Helicopter ride option (additional cost)",
+            "All temple entry fees",
+            "First aid and medical kit",
+          ],
+          exclusions: [
+            "Personal expenses",
+            "Helicopter charges (optional)",
+            "Travel insurance",
+            "Tips to guides and porters",
+            "Any medical expenses",
+            "Additional food and beverages",
+          ],
+        },
+
         adventure: {
           title: "Youth & Adventure Package - Rishikesh",
           location: "Rishikesh, Uttarakhand",
           price: "₹8,999 per person",
-          image:
-            "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=400&fit=crop",
+          image: "img/rishikesh.jpg",
           duration: "4 Days 3 Nights",
           groupSize: "8-20 people",
           accommodation: "Adventure Camp",
           meals: "All meals included",
           description:
-            "Get your adrenaline pumping with our Youth & Adventure Package in Rishikesh, the adventure capital of India. Experience thrilling white water rafting, bungee jumping, trekking, and camping while discovering the spiritual side of this holy city on the banks of the sacred Ganges River.",
+            "Get your adrenaline pumping with our Youth & Adventure Package in Rishikesh, the adventure capital of India. Experience thrilling white water rafting, bungee jumping, trekking, and camping.",
           itinerary: [
             {
               day: 1,
@@ -1526,19 +1948,19 @@
               day: 2,
               title: "White Water Rafting",
               description:
-                "Morning safety briefing, full day rafting from Shivpuri to Rishikesh (16 km), riverside lunch, evening campfire.",
+                "Morning safety briefing, full day rafting from Shivpuri to Rishikesh, evening campfire.",
             },
             {
               day: 3,
               title: "Extreme Adventures",
               description:
-                "Bungee jumping at Jumpin Heights, giant swing, flying fox, cliff jumping, evening at Laxman Jhula and Ram Jhula.",
+                "Bungee jumping, giant swing, flying fox, cliff jumping, evening at Laxman Jhula.",
             },
             {
               day: 4,
               title: "Trekking & Departure",
               description:
-                "Morning trek to Neer Garh Waterfall, camp checkout, departure with adventure certificates.",
+                "Morning trek to Neer Garh Waterfall, camp checkout, departure with certificates.",
             },
           ],
           inclusions: [
@@ -1547,7 +1969,6 @@
             "Professional adventure guides",
             "All adventure activities",
             "Safety equipment",
-            "Transportation for activities",
             "Adventure certificates",
           ],
           exclusions: [
@@ -1563,6 +1984,11 @@
       function openPackageModal(packageType) {
         const modal = document.getElementById("packageModal");
         const data = packageData[packageType];
+
+        if (!data) {
+          console.error("Package data not found for:", packageType);
+          return;
+        }
 
         // Set modal content
         document.getElementById("modalTitle").textContent = data.title;
@@ -1582,14 +2008,14 @@
         const itineraryHtml = data.itinerary
           .map(
             (day) => `
-                    <div class="itinerary-day">
-                        <div class="day-number">${day.day}</div>
-                        <div>
-                            <h6 class="mt-0 mb-2">${day.title}</h6>
-                            <p class="text-muted mb-0">${day.description}</p>
-                        </div>
-                    </div>
-                `
+          <div class="itinerary-day">
+            <div class="day-number">${day.day}</div>
+            <div>
+              <h6 class="mt-0 mb-2">${day.title}</h6>
+              <p class="text-muted mb-0">${day.description}</p>
+            </div>
+          </div>
+        `
           )
           .join("");
         document.getElementById("modalItinerary").innerHTML = itineraryHtml;
@@ -1598,11 +2024,11 @@
         const inclusionsHtml = data.inclusions
           .map(
             (item) => `
-                    <div class="inclusion-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>${item}</span>
-                    </div>
-                `
+          <div class="inclusion-item">
+            <i class="fas fa-check-circle"></i>
+            <span>${item}</span>
+          </div>
+        `
           )
           .join("");
         document.getElementById("modalInclusions").innerHTML = inclusionsHtml;
@@ -1611,11 +2037,11 @@
         const exclusionsHtml = data.exclusions
           .map(
             (item) => `
-                    <div class="exclusion-item">
-                        <i class="fas fa-times-circle"></i>
-                        <span>${item}</span>
-                    </div>
-                `
+          <div class="exclusion-item">
+            <i class="fas fa-times-circle"></i>
+            <span>${item}</span>
+          </div>
+        `
           )
           .join("");
         document.getElementById("modalExclusions").innerHTML = exclusionsHtml;
@@ -1629,13 +2055,6 @@
         const modal = document.getElementById("packageModal");
         modal.style.display = "none";
         document.body.style.overflow = "auto";
-      }
-
-      function bookPackage() {
-        alert(
-          "Thank you for your interest! Our travel consultant will contact you within 24 hours to complete your booking."
-        );
-        closePackageModal();
       }
 
       // Close modal when clicking outside
@@ -1673,30 +2092,7 @@
           });
         });
 
-      // Initialize carousel if present
-      $(document).ready(function () {
-        $(".packages-carousel").owlCarousel({
-          loop: true,
-          margin: 30,
-          nav: false,
-          dots: true,
-          responsive: {
-            0: {
-              items: 1,
-            },
-            600: {
-              items: 2,
-            },
-            1000: {
-              items: 3,
-            },
-          },
-        });
-      });
-    </script>
-
-    <script src="js/main.js"></script>
-    <script>
+      // Navbar hover effects
       document.addEventListener("DOMContentLoaded", function () {
         const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
         let currentActive = document.querySelector(
@@ -1705,16 +2101,12 @@
 
         navLinks.forEach((link) => {
           link.addEventListener("mouseenter", function () {
-            // remove active from current
             if (currentActive) currentActive.classList.remove("active");
-            // set new active
             this.classList.add("active");
           });
 
           link.addEventListener("mouseleave", function () {
-            // remove hover active
             this.classList.remove("active");
-            // restore original active if exists
             if (currentActive) currentActive.classList.add("active");
           });
         });

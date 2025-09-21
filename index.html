@@ -27,6 +27,17 @@
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
+        
+        <style>
+            .national-item img,
+.international-item img {
+    width: 100%;
+    height: 250px;   /* fixed height for all images */
+    object-fit: cover; /* crops image to fit nicely */
+    border-radius: 10px; /* optional rounded corners */
+}
+
+        </style>
     </head>
 
     <body>
@@ -666,190 +677,179 @@
         </div>
         <!-- Destination End -->
 
-        <!-- Explore Tour Start -->
-        <div class="container-fluid ExploreTour py-5">
-            <div class="container py-5">
-                <div class="mx-auto text-center mb-5" style="max-width: 900px;">
-                    <h5 class="section-title px-3">Explore Tour</h5>
-                    <h1 class="mb-4">The World</h1>
-                    <p class="mb-0">
-                        Start your journey today and discover experiences that will last a lifetime.  
-                        Explore world, national, and international destinations — from cultural landmarks to scenic wonders — with tours designed to create unforgettable memories.
-                    </p>
-                </div>
+<!-- Explore Tour Start -->
+    <div class="container-fluid ExploreTour py-5">
+        <div class="container py-5">
+            <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+                <h5 class="section-title px-3">Explore Tour</h5>
+                <h1 class="mb-4">The World</h1>
+                <p class="mb-0">
+                    Start your journey today and discover experiences that will last a lifetime.  
+                    Explore world, national, and international destinations — from cultural landmarks to scenic wonders — with tours designed to create unforgettable memories.
+                </p>
+            </div>
 
-                </div>
-                <div class="tab-class text-center">
-                    <ul class="nav nav-pills d-inline-flex justify-content-center mb-5">
-                        <li class="nav-item">
-                            <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill active" data-bs-toggle="pill" href="#NationalTab-1">
-                                <span class="text-dark" style="width: 250px;">National Tour Category</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="d-flex py-2 mx-3 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#InternationalTab-2">
-                                <span class="text-dark" style="width: 250px;">International tour Category</span>
-                            </a>
-                        </li>
-                    </ul>
-                    <div class="tab-content">
-                        <div id="NationalTab-1" class="tab-pane fade show p-0 active">
-                            <div class="row g-4">
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="national-item">
-                                        <img src="img/weekend.jpg" class="img-fluid w-100 rounded" alt="Image">
-                                        <div class="national-content">
-                                            <div class="national-info">
-                                                <h5 class="text-white text-uppercase mb-2">Weekend Tour</h5>
-                                            </div>
+            <div class="tab-class text-center">
+                <ul class="nav nav-pills d-inline-flex justify-content-center mb-5">
+                    <li class="nav-item">
+                        <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill active" data-bs-toggle="pill" href="#NationalTab-1">
+                            <span class="text-dark" style="width: 250px;">National Tour Category</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="d-flex py-2 mx-3 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#InternationalTab-2">
+                            <span class="text-dark" style="width: 250px;">International tour Category</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div id="NationalTab-1" class="tab-pane fade show p-0 active">
+                        <div class="row g-4">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="national-item">
+                                    <img src="img/weekend.jpg" class="img-fluid w-100 rounded" alt="Weekend Tour">
+                                    <div class="national-content">
+                                        <div class="national-info">
+                                            <h5 class="text-white text-uppercase mb-2">Weekend Tour</h5>
                                         </div>
-                                        <!-- <div class="national-plus-icon">
-                                            <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                        </div> -->
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="national-item">
-                                        <img src="img/honeymoon.jpg" class="img-fluid w-100 rounded" alt="Image">
-                                        <div class="national-content">
-                                            <div class="national-info">
-                                                <h5 class="text-white text-uppercase mb-2">HoneyMoon Tour</h5>
-                                            </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="national-item">
+                                    <img src="img/honeymoon.jpg" class="img-fluid w-100 rounded" alt="Honeymoon Tour">
+                                    <div class="national-content">
+                                        <div class="national-info">
+                                            <h5 class="text-white text-uppercase mb-2">HoneyMoon Tour</h5>
                                         </div>
-                                        <!-- <div class="national-plus-icon">
-                                            <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                        </div> -->
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="national-item">
-                                        <img src="img/roadtrip.jpg" class="img-fluid w-100 rounded" alt="Image">
-                                        <div class="national-content">
-                                            <div class="national-info">
-                                                <h5 class="text-white text-uppercase mb-2">Road Trip</h5>
-                                                <!-- <a href="#" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a> -->
-                                            </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="national-item">
+                                    <img src="img/roadtrip.jpg" class="img-fluid w-100 rounded" alt="Road Trip">
+                                    <div class="national-content">
+                                        <div class="national-info">
+                                            <h5 class="text-white text-uppercase mb-2">Road Trip</h5>
                                         </div>
-                                        <!-- <div class="tour-offer bg-info">15% Off</div>
-                                        <div class="national-plus-icon">
-                                            <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                        </div> -->
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="national-item">
-                                        <img src="img/historical.jpg" class="img-fluid w-100 rounded" alt="Image">
-                                        <div class="national-content">
-                                            <div class="national-info">
-                                                <h5 class="text-white text-uppercase mb-2">Historical Trip</h5>
-                                                <!-- <a href="#" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a> -->
-                                            </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="national-item">
+                                    <img src="img/historical.jpg" class="img-fluid w-100 rounded" alt="Historical Trip">
+                                    <div class="national-content">
+                                        <div class="national-info">
+                                            <h5 class="text-white text-uppercase mb-2">Historical Trip</h5>
                                         </div>
-                                        <!-- <div class="national-plus-icon">
-                                            <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                        </div> -->
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="national-item">
-                                        <img src="img/familytour.jpg" class="img-fluid w-100 rounded" alt="Image">
-                                        <div class="national-content">
-                                            <div class="national-info">
-                                                <h5 class="text-white text-uppercase mb-2">Family Tour</h5>
-                                                <!-- <a href="#" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a> -->
-                                            </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="national-item">
+                                    <img src="img/familytour.jpg" class="img-fluid w-100 rounded" alt="Family Tour">
+                                    <div class="national-content">
+                                        <div class="national-info">
+                                            <h5 class="text-white text-uppercase mb-2">Family Tour</h5>
+                                            <p class="tour-price d-none">Starting from ₹18,999</p>
                                         </div>
-                                        <!-- <div class="tour-offer bg-warning">50% Off</div>
-                                        <div class="national-plus-icon">
-                                            <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                        </div> -->
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="national-item">
-                                        <img src="img/beachtour.jpg" class="img-fluid w-100 rounded" alt="Image">
-                                        <div class="national-content">
-                                            <div class="national-info">
-                                                <h5 class="text-white text-uppercase mb-2">Beach Tour</h5>
-                                                <!-- <a href="#" class="btn-hover text-white">View All Place <i class="fa fa-arrow-right ms-2"></i></a> -->
-                                            </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="national-item">
+                                    <img src="img/beachtour.jpg" class="img-fluid w-100 rounded" alt="Beach Tour">
+                                    <div class="national-content">
+                                        <div class="national-info">
+                                            <h5 class="text-white text-uppercase mb-2">Beach Tour</h5>
                                         </div>
-                                        <!-- <div class="national-plus-icon">
-                                            <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="national-item">
+                                    <img src="img/kedarnath.jpg" class="img-fluid w-100 rounded" alt="Kedarnath Tour">
+                                    <div class="national-content">
+                                        <div class="national-info">
+                                            <h5 class="text-white text-uppercase mb-2">Kedarnath</h5>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div id="InternationalTab-2" class="tab-pane fade show p-0">
-                            <div class="InternationalTour-carousel owl-carousel">
-                                <div class="international-item">
-                                    <img src="img/dubai.jpg" class="img-fluid w-100 rounded" alt="Image">
-                                    <div class="international-content">
-                                        <div class="international-info">
-                                            <h5 class="text-white text-uppercase mb-2">Dubai</h5>
-                                            <!-- <a href="#" class="btn-hover text-white me-4"><i class="fas fa-map-marker-alt me-1"></i> 8 Cities</a>
-                                            <a href="#" class="btn-hover text-white"><i class="fa fa-eye ms-2"></i> <span>143+ Tour Places</span></a> -->
-                                        </div>
+                    </div>
+                    <div id="InternationalTab-2" class="tab-pane fade show p-0">
+                        <div class="InternationalTour-carousel owl-carousel">
+                            <div class="international-item">
+                                <img src="img/dubai.jpg" class="img-fluid w-100 rounded" alt="Dubai Tour">
+                                <div class="international-content">
+                                    <div class="international-info">
+                                        <h5 class="text-white text-uppercase mb-2">Dubai</h5>
                                     </div>
-                                    <!-- <div class="tour-offer bg-success">30% Off</div>
-                                    <div class="international-plus-icon">
-                                        <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                    </div> -->
                                 </div>
-                                <div class="international-item">
-                                    <img src="img/maldives.jpg" class="img-fluid w-100 rounded" alt="Image">
-                                    <div class="international-content">
-                                        <div class="international-info">
-                                            <h5 class="text-white text-uppercase mb-2">Maldives</h5>
-                                            <!-- <a href="#" class="btn-hover text-white me-4"><i class="fas fa-map-marker-alt me-1"></i> 12 Cities</a>
-                                            <a href="#" class="btn-hover text-white"><i class="fa fa-eye ms-2"></i> <span>21+ Tour Places</span></a> -->
-                                        </div>
+                            </div>
+                            <div class="international-item">
+                                <img src="img/maldives.jpg" class="img-fluid w-100 rounded" alt="Maldives Tour">
+                                <div class="international-content">
+                                    <div class="international-info">
+                                        <h5 class="text-white text-uppercase mb-2">Maldives</h5>
                                     </div>
-                                    <!-- <div class="international-plus-icon">
-                                        <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                    </div> -->
                                 </div>
-                                <div class="international-item">
-                                    <img src="img/nepal.jpg" class="img-fluid w-100 rounded" alt="Image">
-                                    <div class="international-content">
-                                        <!-- <div class="tour-offer bg-warning">45% Off</div> -->
-                                        <div class="international-info">
-                                            <h5 class="text-white text-uppercase mb-2">Nepal</h5>
-                                            <!-- <a href="#" class="btn-hover text-white me-4"><i class="fas fa-map-marker-alt me-1"></i> 9 Cities</a>
-                                            <a href="#" class="btn-hover text-white"><i class="fa fa-eye ms-2"></i> <span>133+ Tour Places</span></a> -->
-                                        </div>
+                            </div>
+                            <div class="international-item">
+                                <img src="img/nepal.jpg" class="img-fluid w-100 rounded" alt="Nepal Tour">
+                                <div class="international-content">
+                                    <div class="international-info">
+                                        <h5 class="text-white text-uppercase mb-2">Nepal</h5>
                                     </div>
-                                    <!-- <div class="international-plus-icon">
-                                        <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                    </div> -->
                                 </div>
-                                <div class="international-item">
-                                    <img src="img/singapure.jpg" class="img-fluid w-100 rounded" alt="Image">
-                                    <div class="international-content">
-                                        <div class="international-info">
-                                            <h5 class="text-white text-uppercase mb-2">Singapure</h5>
-                                            <!-- <a href="#" class="btn-hover text-white me-4"><i class="fas fa-map-marker-alt me-1"></i> 8 Cities</a>
-                                            <a href="#" class="btn-hover text-white"><i class="fa fa-eye ms-2"></i> <span>137+ Tour Places</span></a> -->
-                                        </div>
+                            </div>
+                            <div class="international-item">
+                                <img src="img/singapore.jpg" class="img-fluid w-100 rounded" alt="Singapore Tour">
+                                <div class="international-content">
+                                    <div class="international-info">
+                                        <h5 class="text-white text-uppercase mb-2">Singapore</h5>
                                     </div>
-                                    <!-- <div class="international-plus-icon">
-                                        <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                    </div> -->
                                 </div>
-                                <div class="international-item">
-                                    <img src="img/srilanka.jpg" class="img-fluid w-100 rounded" alt="Image">
-                                    <div class="international-content">
-                                        <!-- <div class="tour-offer bg-info">70% Off</div> -->
-                                        <div class="international-info">
-                                            <h5 class="text-white text-uppercase mb-2">Sri lanka</h5>
-                                            <!-- <a href="#" class="btn-hover text-white me-4"><i class="fas fa-map-marker-alt me-1"></i> 17 Cities</a>
-                                            <a href="#" class="btn-hover text-white"><i class="fa fa-eye ms-2"></i> <span>26+ Tour Places</span></a> -->
-                                        </div>
+                            </div>
+                            <div class="international-item">
+                                <img src="img/srilanka.jpg" class="img-fluid w-100 rounded" alt="Sri Lanka Tour">
+                                <div class="international-content">
+                                    <div class="international-info">
+                                        <h5 class="text-white text-uppercase mb-2">Sri Lanka</h5>
                                     </div>
-                                    <!-- <div class="international-plus-icon">
-                                        <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                    </div> -->
+                                </div>
+                            </div>
+                            <div class="international-item">
+                                <img src="img/hajj.jpg" class="img-fluid w-100 rounded" alt="Hajj Tour">
+                                <div class="international-content">
+                                    <div class="international-info">
+                                        <h5 class="text-white text-uppercase mb-2">Hajj</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="international-item">
+                                <img src="img/umrah.jpg" class="img-fluid w-100 rounded" alt="Umrah Tour">
+                                <div class="international-content">
+                                    <div class="international-info">
+                                        <h5 class="text-white text-uppercase mb-2">Umrah</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="international-item">
+                                <img src="img/bali.jpg" class="img-fluid w-100 rounded" alt="Bali Tour">
+                                <div class="international-content">
+                                    <div class="international-info">
+                                        <h5 class="text-white text-uppercase mb-2">Bali</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="international-item">
+                                <img src="img/vietnam.jpg" class="img-fluid w-100 rounded" alt="Vietnam Tour">
+                                <div class="international-content">
+                                    <div class="international-info">
+                                        <h5 class="text-white text-uppercase mb-2">Vietnam</h5>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -857,10 +857,11 @@
                 </div>
             </div>
         </div>
-        <!-- Explore Tour Start -->
+    </div>
+    <!-- Explore Tour End -->
 
         <!-- Packages Start -->
-        <div class="container-fluid packages py-5">
+<div class="container-fluid packages py-5">
     <div class="container py-5">
         <div class="mx-auto text-center mb-5" style="max-width: 900px;">
             <h5 class="section-title px-3">Packages</h5>
@@ -883,16 +884,16 @@
                             <small class="fa fa-star text-primary"></small>
                             <small class="fa fa-star text-primary"></small>
                         </div>
-                        <p class="mb-4">Perfect for business travelers — Bengaluru blends modern infrastructure with comfort. Enjoy seamless stays, conference facilities, and city tours in India’s tech hub.</p>
+                        <p class="mb-4">Perfect for business travelers — Bengaluru blends modern infrastructure with comfort. Enjoy seamless stays, conference facilities, and city tours in India's tech hub.</p>
                     </div>
-                    <div class="row bg-success rounded-bottom mx-0">
-                        <div class="col-6 text-end px-0">
-                          <a href="https://wa.me/+917054393143" 
-     target="_blank" 
-     class=" btn btn-success rounded-bottom ">
-     <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-  </a>
-</div>
+                    <div class="bg-success rounded-bottom">
+                        <div class="p-0">
+                            <a href="https://wa.me/+917054393143" 
+                               target="_blank" 
+                               class="btn btn-success rounded-bottom w-100 d-flex align-items-center justify-content-center">
+                               <i class="fab fa-whatsapp me-2"></i> Chat on WhatsApp
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -914,14 +915,14 @@
                         </div>
                         <p class="mb-4">Ideal for families — Jaipur offers heritage, culture, and colorful experiences. Explore Amber Fort, City Palace, and vibrant bazaars while enjoying comfortable stays.</p>
                     </div>
-                   <div class="row bg-success rounded-bottom mx-0">
-                        <div class="col-6 text-end px-0">
-                          <a href="https://wa.me/+917054393143" 
-     target="_blank" 
-     class=" btn btn-success rounded-bottom ">
-     <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-  </a>
-</div>
+                    <div class="bg-success rounded-bottom">
+                        <div class="p-0">
+                            <a href="https://wa.me/+917054393143" 
+                               target="_blank" 
+                               class="btn btn-success rounded-bottom w-100 d-flex align-items-center justify-content-center">
+                               <i class="fab fa-whatsapp me-2"></i> Chat on WhatsApp
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -943,86 +944,83 @@
                         </div>
                         <p class="mb-4">Designed for couples — Manali is the ultimate romantic escape. From snowy peaks to cozy resorts, enjoy peaceful moments and adventures in the Himalayas.</p>
                     </div>
-                    <div class="row bg-success rounded-bottom mx-0">
-                        <div class="col-6 text-end px-0">
-                          <a href="https://wa.me/+917054393143" 
-     target="_blank" 
-     class=" btn btn-success rounded-bottom ">
-     <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-  </a>
-</div>
+                    <div class="bg-success rounded-bottom">
+                        <div class="p-0">
+                            <a href="https://wa.me/+917054393143" 
+                               target="_blank" 
+                               class="btn btn-success rounded-bottom w-100 d-flex align-items-center justify-content-center">
+                               <i class="fab fa-whatsapp me-2"></i> Chat on WhatsApp
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Hajj Package -->
+            <div class="packages-item">
+                <div class="packages-img">
+                    <img src="img/hajj.jpg" class="img-fluid w-100 rounded-top" alt="Hajj Package - Saudi">
+                </div>
+                <div class="packages-content bg-light">
+                    <div class="p-4 pb-0">
+                        <h5 class="mb-0">Hajj Package - Saudi Arabia</h5>
+                        <div class="mb-3">
+                            <small class="fa fa-star text-primary"></small>
+                            <small class="fa fa-star text-primary"></small>
+                            <small class="fa fa-star text-primary"></small>
+                            <small class="fa fa-star text-primary"></small>
+                            <small class="fa fa-star text-primary"></small>
+                        </div>
+                        <p class="mb-4">
+                            Experience a spiritually fulfilling journey to the holy cities of Makkah and Madinah. 
+                            Our all-inclusive guided and services 
+                            to ensure a safe and memorable pilgrimage in Saudi Arabia.
+                        </p>
+                    </div>
+                    <div class="bg-success rounded-bottom">
+                        <div class="p-0">
+                            <a href="https://wa.me/966XXXXXXXXX" 
+                               target="_blank" 
+                               class="btn btn-success rounded-bottom w-100 d-flex align-items-center justify-content-center">
+                               <i class="fab fa-whatsapp me-2"></i> Chat on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-             <!-- Hajj Package -->
-           <div class="packages-item">
-  <div class="packages-img">
-    <img src="img/hajj.jpg" class="img-fluid w-100 rounded-top" alt="Hajj Package - Saudi">
-  </div>
-  <div class="packages-content bg-light">
-    <div class="p-4 pb-0">
-      <h5 class="mb-0">Hajj Package - Saudi Arabia</h5>
-      <div class="mb-3">
-        <small class="fa fa-star text-primary"></small>
-        <small class="fa fa-star text-primary"></small>
-        <small class="fa fa-star text-primary"></small>
-        <small class="fa fa-star text-primary"></small>
-        <small class="fa fa-star text-primary"></small>
-      </div>
-      <p class="mb-4">
-        Experience a spiritually fulfilling journey to the holy cities of Makkah and Madinah. 
-        Our all-inclusive guided and services 
-        to ensure a safe and memorable pilgrimage in Saudi Arabia.
-      </p>
-    </div>
-    <div class="row bg-success rounded-bottom mx-0">
-      <div class="col-12 text-center px-0">
-        <a href="https://wa.me/966XXXXXXXXX" 
-           target="_blank" 
-           class="btn btn-success rounded-bottom w-100">
-          <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-    <!-- Hajj Package -->
-           <div class="packages-item">
-  <div class="packages-img">
-    <img src="img/umrah.jpg" class="img-fluid w-100 rounded-top" alt="Umra Package - Saudi">
-  </div>
-  <div class="packages-content bg-light">
-    <div class="p-4 pb-0">
-      <h5 class="mb-0">Umrah Package - Saudi Arabia</h5>
-      <div class="mb-3">
-        <small class="fa fa-star text-primary"></small>
-        <small class="fa fa-star text-primary"></small>
-        <small class="fa fa-star text-primary"></small>
-        <small class="fa fa-star text-primary"></small>
-        <small class="fa fa-star text-primary"></small>
-      </div>
-      <p class="mb-4">
-        Experience a spiritually fulfilling journey to the holy cities of Makkah and Madinah. 
-        Our all-inclusive guided and services 
-        to ensure a safe and memorable pilgrimage in Saudi Arabia.
-      </p>
-    </div>
-    <div class="row bg-success rounded-bottom mx-0">
-      <div class="col-12 text-center px-0">
-        <a href="https://wa.me/966XXXXXXXXX" 
-           target="_blank" 
-           class="btn btn-success rounded-bottom w-100">
-          <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
+            <!-- Umrah Package -->
+            <div class="packages-item">
+                <div class="packages-img">
+                    <img src="img/umrah.jpg" class="img-fluid w-100 rounded-top" alt="Umra Package - Saudi">
+                </div>
+                <div class="packages-content bg-light">
+                    <div class="p-4 pb-0">
+                        <h5 class="mb-0">Umrah Package - Saudi Arabia</h5>
+                        <div class="mb-3">
+                            <small class="fa fa-star text-primary"></small>
+                            <small class="fa fa-star text-primary"></small>
+                            <small class="fa fa-star text-primary"></small>
+                            <small class="fa fa-star text-primary"></small>
+                            <small class="fa fa-star text-primary"></small>
+                        </div>
+                        <p class="mb-4">
+                            Experience a spiritually fulfilling journey to the holy cities of Makkah and Madinah. 
+                            Our all-inclusive guided and services 
+                            to ensure a safe and memorable pilgrimage in Saudi Arabia.
+                        </p>
+                    </div>
+                    <div class="bg-success rounded-bottom">
+                        <div class="p-0">
+                            <a href="https://wa.me/966XXXXXXXXX" 
+                               target="_blank" 
+                               class="btn btn-success rounded-bottom w-100 d-flex align-items-center justify-content-center">
+                               <i class="fab fa-whatsapp me-2"></i> Chat on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- Youth & Adventure Package -->
             <div class="packages-item">
@@ -1041,14 +1039,14 @@
                         </div>
                         <p class="mb-4">Perfect for young explorers — Rishikesh offers rafting, trekking, and adventure. Combine thrill with scenic views of the Ganges and Himalayan landscapes.</p>
                     </div>
-                    <div class="row bg-success rounded-bottom mx-0">
-                        <div class="col-6 text-end px-0">
-                          <a href="https://wa.me/+917054393143" 
-     target="_blank" 
-     class=" btn btn-success rounded-bottom ">
-     <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-  </a>
-</div>
+                    <div class="bg-success rounded-bottom">
+                        <div class="p-0">
+                            <a href="https://wa.me/+917054393143" 
+                               target="_blank" 
+                               class="btn btn-success rounded-bottom w-100 d-flex align-items-center justify-content-center">
+                               <i class="fab fa-whatsapp me-2"></i> Chat on WhatsApp
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1389,7 +1387,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // restore original active if exists
       if (currentActive) currentActive.classList.add("active");
     });
-  });
+    });
 });
 </script>
 
